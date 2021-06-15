@@ -30,7 +30,13 @@ listHtml[0].innerHTML = result;
 var result2 ='';
 
 var classe = {
-    students: []
+    students: [
+        {
+            name: 'Giacomo',
+            surname: 'Verde',
+            age: 18
+        }
+    ]
 };
 
 var student2 = {
