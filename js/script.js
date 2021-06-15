@@ -13,9 +13,7 @@ var student = {
 }
 
 for (var k in student) {
-    console.log(k, student[k])
     result += '<li>' + k + ': ' + student[k] + '</li>';
-
 }
 
 listHtml[0].innerHTML = result;
@@ -78,14 +76,31 @@ listHtml[1].innerHTML = result2;
 //Dare la possibilità all’utente, attraverso 3 prompt() - uno per ciascuna proprietà
 //- di aggiungere UN SOLO oggetto studente inserendo nell’ordine: nome, cognome e età.
 
+
+//while per i controlli
 var nameInput = prompt('Inserisci il nome');
+while (!isNaN(nameInput)) {
+    alert('Inserisci un nome');
+    nameInput = prompt('Inserisci il nome');
+}
+
 var surnameInput = prompt('Inserisci il cognome');
-var ageInput = prompt('Inserisci l\'età');
+while (!isNaN(surnameInput)) {
+    alert('Inserisci un cognome');
+    surnameInput = prompt('Inserisci il cognome');
+}
+
+var ageInput = parseInt(prompt('Inserisci l\'età')); // parseInt perchè anche gli altri sono stati inseriti come tipi numero
+while (isNaN(ageInput)) {
+    alert('Inserisci un numero')
+    ageInput = parseInt(prompt('Inserisci l\'età'));
+}
+
 var result3 = ''
 
 classe.students.push ({
-    name: nameInput,
-    surname: surnameInput,
+    name: nameInput[0].toUpperCase() + nameInput.slice(1),
+    surname: surnameInput[0].toUpperCase() + surnameInput.slice(1),
     age: ageInput
 });
 
