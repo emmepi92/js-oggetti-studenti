@@ -51,7 +51,7 @@ var student4 = {
     age: 25
 }
 
-classe.students.push(student,student2,student3,student4);
+classe.students.push(student2,student3,student4);
 
 
 for ( var x = 0; x < classe.students.length; x++) {
@@ -70,7 +70,7 @@ listHtml[1].innerHTML = result2;
 
 //PARTE 3
 //Dare la possibilità all’utente, attraverso 3 prompt() - uno per ciascuna proprietà
-// - di aggiungere UN SOLO oggetto studente inserendo nell’ordine: nome, cognome e età.
+//- di aggiungere UN SOLO oggetto studente inserendo nell’ordine: nome, cognome e età.
 
 var nameInput = prompt('Inserisci il nome');
 var surnameInput = prompt('Inserisci il cognome');
@@ -83,9 +83,11 @@ classe.students.push ({
     age: ageInput
 });
 
+//per curiosità, se funziona
+//stampa delle proprietà dell'ultimo oggetto(student[ultimo]) dell'array
+//della proprietà(students) dell'oggetto(classe)
 for ( var key in classe.students[classe.students.length - 1]) {
     result3 += '<li>' + key + ': ' + classe.students[classe.students.length - 1][key] + '</li>';
-
 }
 
 listHtml[2].innerHTML = result3;
