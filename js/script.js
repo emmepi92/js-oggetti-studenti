@@ -27,46 +27,24 @@ listHtml[0].innerHTML = result;
 //giusto per non sovrascriverla
 var result2 ='';
 
-var classe = {
-    students: [
-        {
-            name: 'Giacomo',
-            surname: 'Verde',
-            age: 18
-        }
-    ]
-};
+var students= [
+        {name: 'Giacomo',
+        surname: 'Verde',
+        age: 18},
+        {name: 'Fabio',
+        surname: 'Bianchi',
+        age: 30},
+        {name: 'Anna',
+        surname: 'Giallo',
+        age: 27},
+        {name: 'Maria',
+        surname: 'Neri',
+        age: 25}
+    ];
 
-var student2 = {
-    name: 'Fabio',
-    surname: 'Bianchi',
-    age: 30
-}
+for ( var x = 0; x < students.length; x++) {
 
-var student3 = {
-    name: 'Anna',
-    surname: 'Giallo',
-    age: 27
-}
-
-var student4 = {
-    name: 'Maria',
-    surname: 'Neri',
-    age: 25
-}
-
-classe.students.push(student2,student3,student4);
-
-
-for ( var x = 0; x < classe.students.length; x++) {
-
-    for ( var key in classe.students[x]) {
-        console.log(key, classe.students[x][key]);
-        result2 += '<li>' + key + ': ' + classe.students[x][key] + '</li>';
-    }
-
-    //riga vuota 
-    result2 += '<br/>'
+    result2 += '<li>'+ students[x].name + ' ' + students[x].surname + '</li><br/>';
 }
 
 listHtml[1].innerHTML = result2;
@@ -98,7 +76,7 @@ while (isNaN(ageInput)) {
 
 var result3 = ''
 
-classe.students.push ({
+students.push ({
     name: nameInput[0].toUpperCase() + nameInput.slice(1),
     surname: surnameInput[0].toUpperCase() + surnameInput.slice(1),
     age: ageInput
@@ -107,8 +85,8 @@ classe.students.push ({
 //per curiosità, se funziona
 //stampa delle proprietà dell'ultimo oggetto(student[ultimo]) dell'array
 //della proprietà(students) dell'oggetto(classe)
-for ( var key in classe.students[classe.students.length - 1]) {
-    result3 += '<li>' + key + ': ' + classe.students[classe.students.length - 1][key] + '</li>';
+for ( var key in students[students.length - 1]) {
+    result3 += '<li>' + key + ': ' + students[students.length - 1][key] + '</li>';
 }
 
 listHtml[2].innerHTML = result3;
